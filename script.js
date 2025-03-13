@@ -1,44 +1,60 @@
 document.addEventListener("DOMContentLoaded", () => {
-    loadPage('home'); // Charger l'accueil par défaut
+    loadPage("home"); // Charger la page d'accueil par défaut
 });
 
+// 📌 Fonction pour charger une page
 function loadPage(page) {
     const content = document.getElementById("content");
 
+    // Vérifier si la page demandée est déjà affichée
     if (content.dataset.page === page) return;
     content.dataset.page = page;
 
+    // Appliquer une transition (fade-out)
     content.classList.remove("show");
 
+    // Charger le contenu après un court délai
     setTimeout(() => {
-        if (page === "home") {
-            content.innerHTML = `
-                <h1>Bienvenue sur WKW Audits</h1>
-                <p>Choisissez une section dans la barre de navigation.</p>
-            `;
-        } 
-        else if (page === "audits") {
-            content.innerHTML = `
-                <h1>Checklist des Audits WKW</h1>
-                <div class="audit-list">
-                    <button onclick="openAudit('gemba')">Audit Gemba OJT</button>
-                    <button onclick="openAudit('5s')">Audit 5S</button>
-                    <button onclick="openAudit('logistique')">Audit Logistique</button>
-                    <button onclick="openAudit('qualite')">Audit Mur Qualité</button>
-                    <button onclick="openAudit('vestiaires')">Audit Vestiaires & Espaces Communs</button>
-                    <button onclick="openAudit('amelioration')">Proposition d'Amélioration</button>
-                </div>
-            `;
-        } 
-        else if (page === "contact") {
-            content.innerHTML = `
-                <h1>Contactez-nous</h1>
-                <p>Envoyez-nous un message !</p>
+        content.innerHTML = getPageContent(page);
+
+        // Ajouter un bouton "Retour" sauf sur la page d'accueil
+        if (page !== "home") {
+            content.innerHTML += `
+                <button class="back-button" onclick="loadPage('home')">⬅ Retour</button>
             `;
         }
 
+        // Ajouter la mention "Créé par Trabelsi Houssine" en bas
+        content.innerHTML += `
+            <footer class="footer">Créé par Trabelsi Houssine</footer>
+        `;
+
         content.classList.add("show");
-    }, 50);
+    }, 200);
+}
+
+// 🔄 Fonction pour récupérer le contenu des pages
+function getPageContent(page) {
+    const pages = {
+        home: `
+            <h1>Bienvenue sur WKW Audits</h1>
+            <p>Choisissez une section dans la barre de navigation.</p>
+        `,
+        audits: `
+            <h1>Checklist des Audits WKW</h1>
+            <div class="audit-list">
+                ${Object.keys(auditLinks).map(type => 
+                    `<button onclick="openAudit('${type}')">${formatAuditName(type)}</button>`
+                ).join('')}
+            </div>
+        `,
+        contact: `
+            <h1>Contactez-nous</h1>
+            <p>Pour toute assistance, contactez-nous à :</p>
+            <a href="mailto:utiqanooooo@gmail.com" class="contact-link">utiqanooooo@gmail.com</a>
+        `
+    };
+    return pages[page] || `<h1>Page introuvable</h1>`;
 }
 
 // 🌍 Liens des audits
@@ -51,11 +67,16 @@ const auditLinks = {
     amelioration: "https://forms.office.com/e/TpWLh24LzL"
 };
 
-// 🆕 Ouvrir audit dans un nouvel onglet
+// 🆕 Fonction pour ouvrir un audit dans un nouvel onglet
 function openAudit(type) {
     if (auditLinks[type]) {
-        window.open(auditLinks[type], '_blank');
+        window.open(auditLinks[type], "_blank");
     } else {
         alert("Lien indisponible.");
     }
+}
+
+// 📌 Fonction pour formater les noms des audits (ex: "5s" => "Audit 5S")
+function formatAuditName(name) {
+    return "Audit " + name.charAt(0).toUpperCase() + name.slice(1);
 }
