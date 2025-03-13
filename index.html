@@ -11,21 +11,22 @@
 
     <!-- Vidéo de fond -->
     <div class="video-container">
-        <video autoplay loop muted>
+        <video autoplay loop muted playsinline poster="fallback-image.jpg">
             <source src="https://videos.pexels.com/video-files/5896379/5896379-uhd_1440_2560_24fps.mp4" type="video/mp4">
         </video>
         <div class="overlay">
             <header>
                 <div class="logo-container">
-                    <img src="https://www.electrive.net/media/2017/04/wkw-automotive-logo-symbolbild.png" alt="WKW Logo">
+                    <img src="https://www.electrive.net/media/2017/04/wkw-automotive-logo-symbolbild.png" alt="Logo de WKW Automotive">
                 </div>
+                <button class="menu-toggle" onclick="menuToggle()">☰</button>
                 <nav class="navbar">
                     <a href="#" onclick="loadPage('home')">Accueil</a>
                     <a href="#" onclick="loadPage('audits')">Audits</a>
                     <a href="#" onclick="loadPage('contact')">Contact</a>
                 </nav>
             </header>
-            <div id="content"></div>
+            <div id="content" data-page="home"></div>
         </div>
     </div>
 
