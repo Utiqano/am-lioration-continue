@@ -4,31 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WKW Audits</title>
-    <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="https://www.electrive.net/media/2017/04/wkw-automotive-logo-symbolbild.png" 
-                 alt="Logo de WKW" loading="lazy">
-        </div>
-        <nav class="navbar">
-            <a href="#" onclick="loadPage('home')" aria-label="Aller à l'accueil">Accueil</a>
-            <a href="#" onclick="loadPage('audits')" aria-label="Voir les audits">Audits</a>
-            <a href="#" onclick="loadPage('contact')" aria-label="Nous contacter">Contact</a>
-        </nav>
-    </header>
-
+    <!-- Vidéo de fond -->
     <div class="video-container">
         <video autoplay loop muted>
             <source src="https://videos.pexels.com/video-files/5896379/5896379-uhd_1440_2560_24fps.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas les vidéos HTML5. 
-            <img src="fallback-image.jpg" alt="Image de remplacement">
         </video>
         <div class="overlay">
+            <header>
+                <div class="logo-container">
+                    <img src="https://www.electrive.net/media/2017/04/wkw-automotive-logo-symbolbild.png" alt="WKW Logo">
+                </div>
+                <nav class="navbar">
+                    <a href="#" onclick="loadPage('home')">Accueil</a>
+                    <a href="#" onclick="loadPage('audits')">Audits</a>
+                    <a href="#" onclick="loadPage('contact')">Contact</a>
+                </nav>
+            </header>
             <div id="content"></div>
         </div>
     </div>
