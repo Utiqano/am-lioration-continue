@@ -50,11 +50,22 @@ body {
     padding: 10px 15px;
     background: red;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .navbar a:hover {
     background: darkred;
+    transform: scale(1.05);
+}
+
+/* Smooth transitions */
+#content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#content.show {
+    opacity: 1;
 }
 
 .audit-list {
@@ -65,28 +76,27 @@ body {
 }
 
 .audit-list button {
-    padding: 10px 15px;
+    padding: 12px 18px;
     font-size: 16px;
-    background: red;
+    background: linear-gradient(45deg, red, darkred);
     color: white;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .audit-list button:hover {
-    background: darkred;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 iframe {
-    width: 100%;
+    width: 90%;
+    max-width: 800px;
     height: 500px;
     border: none;
     margin-top: 20px;
-}
-
-.red-text {
-    color: red;
 }
 
 .hidden {
@@ -100,4 +110,10 @@ iframe {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+/* Button disable effect */
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
 }
