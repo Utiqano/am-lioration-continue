@@ -51,12 +51,12 @@ function loadPage(page) {
 
 // Liens des audits
 const auditLinks = {
-    gemba: "https://forms.office.com/e/1nWmJsVRNb",
-    "5s": "https://forms.office.com/e/YNkFgkXXhn",
-    logistique: "https://forms.office.com/e/Ps1y5HpJ8u",
-    qualite: "https://forms.office.com/e/0nhbJYckHs",
-    vestiaires: "https://forms.office.com/e/vL5vjZyE7u",
-    amelioration: "https://forms.office.com/e/TpWLh24LzL"
+    gemba: "https://forms.office.com/Pages/ResponsePage.aspx?id=Yy2gqiIfe0W77Avd4jtr3wM3f1Qll_xKkMAzfzJQ_BRUM1hRVVYyQ0hBOFpGQ1lGMlgzSkpNS1BETC4u",
+    "5s": "https://forms.office.com/Pages/ResponsePage.aspx?id=Yy2gqiIfe0W77Avd4jtr3wM3f1Qll_xKkMAzfzJQ_BRUNzQ4MldBM0dTVzc0MFRHVlc0UlU2VE9QRi4u",
+    logistique: "https://forms.office.com/Pages/ResponsePage.aspx?id=Yy2gqiIfe0W77Avd4jtr3wM3f1Qll_xKkMAzfzJQ_BRURjJOMUdPOVFXU1FUR0tCN09WQTdJWVdHRS4u",
+    qualite: "https://forms.office.com/Pages/ResponsePage.aspx?id=Yy2gqiIfe0W77Avd4jtr3wM3f1Qll_xKkMAzfzJQ_BRUMDVBQkVHM002WUhaNUdINVpaTFpTTTVSRC4u",
+    vestiaires: "https://forms.office.com/Pages/ResponsePage.aspx?id=Yy2gqiIfe0W77Avd4jtr3wM3f1Qll_xKkMAzfzJQ_BRUOEJYRjRJSlJRSUtDWEJTMkdKTEROUkxZRi4u",
+    amelioration: "https://forms.office.com/Pages/ResponsePage.aspx?id=Yy2gqiIfe0W77Avd4jtr3wM3f1Qll_xKkMAzfzJQ_BRUNEEyWERCWlhKUEs4NzNSQ0k1NUwxRUhHMS4u"
 };
 
 // Afficher l'audit sélectionné
